@@ -24,3 +24,18 @@ def display():
             print(f"Student Name: {student['name']}")
             print(f"Student Age: {student['age']}")
             print("--------------------")
+
+def delete():
+    student_id = input("Enter the student ID to delete: ")
+    found = False
+
+    for student in students:
+        if student["id"] == student_id:
+            students.remove(student)
+            found = True
+            break
+
+    if found:
+        print("Student deleted successfully!")
+    else:
+        print("Student not found.")
